@@ -19,6 +19,8 @@
 2. Providing detailed information about safety of data
 3. Helping to temporary/permamently block potential attackers, improving safety
 
+**Core idea of project** is improving safety of apps that use sql databases and informing service about detections for it to perform action
+
 ---
 
 ## Project functionality
@@ -30,7 +32,7 @@ function **strSQLICheck**
 
 ## Repository structure
 
-Below is the directory tree is provided(without cache files like `__pycache__`):
+Below is the directory tree is provided (without cache files like `__pycache__`):
 
 ```
     DataFilter
@@ -47,20 +49,26 @@ Below is the directory tree is provided(without cache files like `__pycache__`):
 
 ```
 
-- **`testapps`** — 2 test apps without input escaping: **appSQLInoFiltering** without DataFilter usage, **appSQLIwithFiltering** with DataFilter used; start them with ```python app.py``` command and use any sqli testing utility you like (for example sqlmap)
+- **`testapps`** — 2 test apps without input escaping: **appSQLInoFiltering** with DataFilter not being used, **appSQLIwithFiltering** with DataFilter used; start them with commands below, ensure you are in app's directory
+```
+python -m pip install pip update
+python -m pip install requirements.txt
+python app.py
+``` 
+After that use any sqli testing utility you like (for example sqlmap)
 
 ---
 
 ## Expected behavior
 
-- **Normal user** interacts with service without any problem, may sometimes trigger filter, for example using ' or " in password when registering
-- **Attacker** tries to use sqli -> Filter detects sqli usage -> (programmer defined) service takes action (for example temporary ban if 3+ sqli usage tries detected) 
+- **Normal user** interacts with service without any problem, may sometimes trigger filter, for example by using ' or " in password when registering
+- **Attacker** tries to use sqli -> filter detects sqli usage -> (programmer defined behaviour) service takes action (for example temporary ban if 3+ sqli usage tries detected)
 
 ---
 
 ## Full documentation
 
-You can find full documentation in docs.odt file [here](placeholder)
+You can find full documentation in docs.odt file [here](https://github.com/Mavment/DataFilter/tree/master/docs)
 
 Full documentation includes expected behaviour of data checker, strategies used, report structure and a lot more!
 
@@ -70,4 +78,4 @@ Full documentation includes expected behaviour of data checker, strategies used,
 
 - Its well-known that no contraption is perfect and DataFilter is not an exception, you may ask me freely if you have any questions/suggestions, i'll answer whenever i'll be free (usually not more then 1 business day)
 
-- Thanks for using **DataFilter**!
+Thanks for using **DataFilter**!
