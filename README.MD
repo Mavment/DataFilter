@@ -42,9 +42,12 @@ Below the repository directory tree is provided (without cache files like `__pyc
     │   └── docs.odt
     ├── testapps
     │   ├── appSQLInoFiltering
-    │       ├──
+    │   │   ├── app.py
+    │   │   └── database.db
     │   └── appSQLIwithFiltering
-    │       ├──
+    │       ├── app.py
+    │       ├── database.db
+    │       └── DataFilter.py
     ├── DataFilter.py
     └── README.md
 
