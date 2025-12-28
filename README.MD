@@ -32,6 +32,8 @@ function **strSQLICheck**
 - Analyses provided data using basic-heuristic and pattern-based startegy
 - Generates report upon returning that includes useful and overall safety information about provided data
 
+---
+
 ## Repository structure
 
 Below the repository directory tree is provided (without cache files like `__pycache__`):
@@ -43,12 +45,15 @@ Below the repository directory tree is provided (without cache files like `__pyc
     ├── testapps
     │   ├── appSQLInoFiltering
     │   │   ├── app.py
-    │   │   └── database.db
+    │   │   ├── database.db
+    │   │   └── requirements.txt
     │   └── appSQLIwithFiltering
     │       ├── app.py
     │       ├── database.db
-    │       └── DataFilter.py
+    │       ├── DataFilter.py
+    │       └── requirements.txt
     ├── DataFilter.py
+    ├── LICENCE
     └── README.md
 
 
