@@ -21,6 +21,8 @@
 
 **Core idea of project** is improving safety of apps that use sql databases and informing service about detections for it to perform action
 
+DataFilter **is not able** to fully protect service, input escaping is still reqiured and highly recommended!
+
 ---
 
 ## Project functionality
@@ -32,7 +34,7 @@ function **strSQLICheck**
 
 ## Repository structure
 
-Below is the directory tree is provided (without cache files like `__pycache__`):
+Below the repository directory tree is provided (without cache files like `__pycache__`):
 
 ```
     DataFilter
@@ -61,8 +63,8 @@ After that use any sqli testing utility you like (for example sqlmap)
 
 ## Expected behavior
 
-- **Normal user** interacts with service without any problem, may sometimes trigger filter, for example by using ' or " in password when registering
-- **Attacker** tries to use sqli -> filter detects sqli usage -> (programmer defined behaviour) service takes action (for example temporary ban if 3+ sqli usage tries detected)
+- **Normal user**: interacts with service without any problem, may sometimes trigger filter, for example by using ' or " in password when registering
+- **Attacker**: tries to use sqli -> filter detects sqli usage -> (programmer defined behaviour) service takes action (for example temporary ban if 3+ sqli usage tries detected)
 
 ---
 
